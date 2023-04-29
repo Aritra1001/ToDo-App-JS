@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./style.css" />
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <title>ToDo App</title>
+  </head>
+  <body>
+
+    <div id="head">
+      <div id="task"><span id="taskText">Tasks </span>List</div>
+      <div id="add" onclick="modal()">
+        <i class="fa-solid fa-circle-plus fa-shake"></i>
+        <span id="add-btn-text"></span>
+        <div class="add-item-txt">Add Items</div>
+      </div>
+      
+    </div>
+
+    <div id="back-btn">
+      <i id="back-icon" class="fa-solid fa-circle-arrow-left fa-beat" onclick="displayAll()"></i>
+      Go Back
+      <!-- <button class="fa-solid fa-circle-arrow-left fa-beat"></button>Go Back -->
+    </div>
+
+    <div id="card-dynamic-head" style="display: none;"></div>
+
+    <div id="modal-container">
+        <div id="modal-box">
+            <span class="big-blue-text">Add New List</span> <br/>
+            <input id="modal-input" class="inputField" type="search" placeholder="Type list title here"/> <br/>
+            <button id="modal-add-btn" class="new-list-btn" onclick="addCard()">Add</button>
+            <button id="modal-close-btn" class="new-list-btn" onclick="closeModal()">Close</button>
+        </div>
+    </div>
+
+    <div id="modal-item">
+        <div id="modal-item-box">
+            <span class="big-blue-text">Add New Item</span> <br/>
+            <input id="modal-item-input" class="inputField" type="search" placeholder="Type todo"/><br/>
+            <button id="modal-item-add-btn" class="item-list-btn" onclick="addList()">Add</button>
+            <button id="modal-item-close-btn" class="item-list-btn" onclick="closeCardModal()">Close</button>
+        </div>
+    </div>
+
+    <div style="display: none;" class="list-element">
+        <button class="mark-btn" onclick="completedTask(this)">Mark done</button>
+    </div>
+
+    <div id="empty-list">
+        No items in the to-do list
+    </div>
+
+    <div id="todo-outer-container">
+        <div class="todo-card">
+            <div class="wrap-cont">
+                <option class="card-head" onclick="headerFunc(this.value)">Try</option>
+                <br/>
+                <hr/>
+                <div class="add-todo-after-this"></div>
+                <br/>
+                <div class="btns-in-card">
+                  <button class="fa-solid fa-trash-can fa-flip delete-btn-card" ></button>
+                  <button class="fa-solid fa-circle-plus fa-beat add-btn-card" ></button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="./script.js"></script>
+  </body>
+</html>
